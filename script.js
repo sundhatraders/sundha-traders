@@ -1,30 +1,18 @@
-// Sundha Traders Website
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("SUNDHA TRADERS Website Loaded!");
 
-console.log("Welcome to Sundha Traders");
+  const links = document.querySelectorAll("nav a");
 
-// Smooth animation on page load
-window.addEventListener("load", () => {
-    document.body.style.opacity = "1";
-});
+  links.forEach(link => {
+    link.addEventListener("click", function (e) {
+      const target = this.getAttribute("href");
 
-// Highlight active menu on scroll
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav a");
-
-window.addEventListener("scroll", () => {
-    let current = "";
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 120;
-        if (pageYOffset >= sectionTop) {
-            current = section.getAttribute("id");
-        }
+      if (target.startsWith("#")) {
+        e.preventDefault();
+        document.querySelector(target).scrollIntoView({
+          behavior: "smooth"
+        });
+      }
     });
-
-    navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-            link.classList.add("active");
-        }
-    });
+  });
 });
