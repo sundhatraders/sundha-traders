@@ -277,3 +277,57 @@ font-size:17px;
 }
 
 }
+/* ABOUT */
+
+.about{
+padding:80px 8%;
+text-align:center;
+background:#111;
+color:white;
+}
+
+.about p{
+max-width:900px;
+margin:auto;
+line-height:1.8;
+font-size:18px;
+color:#ddd;
+}
+
+/* CONTACT */
+
+.contact{
+padding:80px 8%;
+background:#f7f7f7;
+text-align:center;
+}
+
+.contact-box{
+max-width:700px;
+margin:auto;
+background:white;
+padding:40px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+.contact-box h3{
+margin-bottom:20px;
+font-size:30px;
+color:#ffb400;
+}
+
+.contact-box p{
+margin:15px 0;
+font-size:18px;
+}
+
+.contact-box a{
+text-decoration:none;
+color:#111;
+font-weight:bold;
+}
+
+.contact-box a:hover{
+color:#ffb400;
+}
