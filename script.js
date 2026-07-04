@@ -1,29 +1,23 @@
-// Sundha Traders Website
+document.addEventListener("DOMContentLoaded", function () {
 
-document.addEventListener("DOMContentLoaded", () => {
+  console.log("Sundha Traders Website Loaded");
 
-    console.log("SUNDHA TRADERS Website Loaded!");
+  document.querySelectorAll('nav a[href^="#"]').forEach(link => {
 
-    const links = document.querySelectorAll("nav a");
+    link.addEventListener("click", function(e) {
 
-    links.forEach(link => {
-        link.addEventListener("click", function(e) {
+      e.preventDefault();
 
-            const target = this.getAttribute("href");
+      const target = document.querySelector(this.getAttribute("href"));
 
-            if (target.startsWith("#")) {
-                e.preventDefault();
-
-                const element = document.querySelector(target);
-
-                if (element) {
-                    element.scrollIntoView({
-                        behavior: "smooth"
-                    });
-                }
-            }
-
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth"
         });
+      }
+
     });
+
+  });
 
 });
