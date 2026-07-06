@@ -1,23 +1,71 @@
+// ===============================
+// SUNDHA TRADERS WEBSITE
+// script.js
+// ===============================
+
 document.addEventListener("DOMContentLoaded", function () {
 
-  console.log("Sundha Traders Website Loaded");
+    console.log("Sundha Traders Website Loaded Successfully");
 
-  document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+    // Smooth Scroll
+    const links = document.querySelectorAll('nav a');
 
-    link.addEventListener("click", function(e) {
+    links.forEach(link => {
 
-      e.preventDefault();
+        link.addEventListener("click", function(e){
 
-      const target = document.querySelector(this.getAttribute("href"));
+            const target = this.getAttribute("href");
 
-      if (target) {
-        target.scrollIntoView({
-          behavior: "smooth"
+            if(target.startsWith("#")){
+
+                e.preventDefault();
+
+                document.querySelector(target).scrollIntoView({
+
+                    behavior:"smooth"
+
+                });
+
+            }
+
         });
-      }
 
     });
 
-  });
+    // Header Shadow on Scroll
+    const header = document.querySelector("header");
+
+    window.addEventListener("scroll", function(){
+
+        if(window.scrollY > 80){
+
+            header.style.boxShadow="0 10px 30px rgba(0,0,0,.25)";
+
+        }else{
+
+            header.style.boxShadow="0 5px 15px rgba(0,0,0,.15)";
+
+        }
+
+    });
+
+    // Card Hover Animation
+    const cards=document.querySelectorAll(".card");
+
+    cards.forEach(card=>{
+
+        card.addEventListener("mouseenter",()=>{
+
+            card.style.transform="translateY(-10px)";
+
+        });
+
+        card.addEventListener("mouseleave",()=>{
+
+            card.style.transform="translateY(0px)";
+
+        });
+
+    });
 
 });
