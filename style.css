@@ -373,3 +373,82 @@ color:#ffb400;
 .floating-whatsapp:hover{
     transform:scale(1.1);
 }
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width:768px){
+
+header .container{
+flex-direction:column;
+padding:15px;
+}
+
+nav{
+margin-top:10px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+}
+
+nav a{
+margin:0;
+font-size:14px;
+}
+
+.hero{
+padding:100px 20px;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.hero h2{
+font-size:26px;
+}
+
+.hero p{
+font-size:17px;
+line-height:1.7;
+}
+
+.hero-btn{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:15px;
+}
+
+.hero-btn a{
+width:220px;
+text-align:center;
+font-size:18px;
+padding:15px;
+}
+
+.product-grid,
+.brand-grid{
+grid-template-columns:1fr;
+}
+
+.product-card,
+.brand-card{
+font-size:18px;
+padding:20px;
+}
+
+.contact-box{
+width:100%;
+padding:25px;
+}
+
+.about-text{
+font-size:17px;
+line-height:1.8;
+}
+
+.title h2{
+font-size:36px;
+}
+
+}
