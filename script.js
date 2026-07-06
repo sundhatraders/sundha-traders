@@ -1,71 +1,63 @@
-// ===============================
-// SUNDHA TRADERS WEBSITE
+// ===========================
+// SUNDHA TRADERS
 // script.js
-// ===============================
+// ===========================
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
-    console.log("Sundha Traders Website Loaded Successfully");
+  // Smooth Scroll
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
 
-    // Smooth Scroll
-    const links = document.querySelectorAll('nav a');
-
-    links.forEach(link => {
-
-        link.addEventListener("click", function(e){
-
-            const target = this.getAttribute("href");
-
-            if(target.startsWith("#")){
-
-                e.preventDefault();
-
-                document.querySelector(target).scrollIntoView({
-
-                    behavior:"smooth"
-
-                });
-
-            }
-
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({
+          behavior: 'smooth'
         });
+      }
+    });
+  });
+
+  // Header Shadow
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 50) {
+      header.style.boxShadow = "0 10px 25px rgba(0,0,0,.25)";
+    } else {
+      header.style.boxShadow = "0 5px 15px rgba(0,0,0,.15)";
+    }
+
+  });
+
+  // Fade-in Animation
+  const cards = document.querySelectorAll(".card");
+
+  const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "translateY(0)";
+      }
 
     });
 
-    // Header Shadow on Scroll
-    const header = document.querySelector("header");
+  }, {
+    threshold: 0.2
+  });
 
-    window.addEventListener("scroll", function(){
+  cards.forEach(card => {
 
-        if(window.scrollY > 80){
+    card.style.opacity = "0";
+    card.style.transform = "translateY(40px)";
+    card.style.transition = "0.6s ease";
 
-            header.style.boxShadow="0 10px 30px rgba(0,0,0,.25)";
+    observer.observe(card);
 
-        }else{
-
-            header.style.boxShadow="0 5px 15px rgba(0,0,0,.15)";
-
-        }
-
-    });
-
-    // Card Hover Animation
-    const cards=document.querySelectorAll(".card");
-
-    cards.forEach(card=>{
-
-        card.addEventListener("mouseenter",()=>{
-
-            card.style.transform="translateY(-10px)";
-
-        });
-
-        card.addEventListener("mouseleave",()=>{
-
-            card.style.transform="translateY(0px)";
-
-        });
-
-    });
+  });
 
 });
