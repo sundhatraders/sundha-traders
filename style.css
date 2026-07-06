@@ -7,7 +7,7 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#f4f4f4;
+background:#f5f5f5;
 color:#222;
 line-height:1.6;
 }
@@ -20,9 +20,12 @@ margin:auto;
 
 header{
 background:#111;
-position:sticky;
+position:fixed;
 top:0;
-z-index:999;
+left:0;
+width:100%;
+z-index:1000;
+box-shadow:0 5px 15px rgba(0,0,0,.2);
 }
 
 header .container{
@@ -41,8 +44,9 @@ color:#FFC107;
 nav a{
 color:#fff;
 text-decoration:none;
-margin-left:20px;
+margin-left:25px;
 font-weight:500;
+transition:.3s;
 }
 
 nav a:hover{
@@ -50,258 +54,176 @@ color:#FFC107;
 }
 
 .hero{
-    height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:#fff;
-    position:relative;
-    background:
-    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
-    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80");
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:#fff;
+background:
+linear-gradient(rgba(0,0,0,.70),rgba(0,0,0,.70)),
+url("https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=1600&q=80");
+background-size:cover;
+background-position:center;
 }
 
 .hero-content{
-    max-width:800px;
-    padding:20px;
+max-width:850px;
+padding:20px;
 }
 
 .hero h1{
-    font-size:60px;
-    font-weight:800;
-    margin-bottom:15px;
-    text-shadow:0 4px 10px rgba(0,0,0,.5);
+font-size:64px;
+font-weight:800;
+margin-bottom:15px;
 }
 
 .hero h2{
-    color:#FFC107;
-    font-size:32px;
-    margin-bottom:20px;
+font-size:34px;
+color:#FFC107;
+margin-bottom:20px;
 }
 
 .hero p{
-    font-size:20px;
-    margin-bottom:30px;
+font-size:20px;
+margin-bottom:35px;
 }
 
-.hero-btn{
-    display:inline-block;
-    padding:15px 35px;
-    border-radius:8px;
-    font-weight:700;
-    transition:.3s;
-    margin:10px;
-}
-
-.hero-btn:hover{
-    transform:translateY(-5px);
-}
-
-
-.btn-red{
-background:#e53935;
-color:#fff;
-}
-
-.btn-green{
-background:#25D366;
-color:#fff;
-}
-
-.btn-red,
-.btn-green{
-    transition:.3s;
-}
-
-.btn-red:hover,
-.btn-green:hover{
-    transform:translateY(-4px);
-    box-shadow:0 12px 25px rgba(0,0,0,.3);
-}
-
-section{
-padding:70px 20px;
-}
-
-.title{
-text-align:center;
-margin-bottom:40px;
-}
-
-.title h2{
-font-size:36px;
-color:#111;
-}
-
-.product-grid,
-.brand-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+.buttons{
+display:flex;
+justify-content:center;
 gap:20px;
+flex-wrap:wrap;
 }
 
-.product-card,
-.brand-card{
-background:#fff;
-padding:25px;
-border-radius:12px;
-text-align:center;
-box-shadow:0 4px 15px rgba(0,0,0,.1);
-font-weight:600;
+.call-btn,
+.whatsapp-btn{
+padding:15px 35px;
+border-radius:10px;
+text-decoration:none;
+font-weight:700;
+color:#fff;
 transition:.3s;
 }
 
-.product-card:hover,
-.brand-card:hover{
-transform:translateY(-8px);
+.call-btn{
+background:#ff3b30;
 }
 
-.product-card,
-.brand-card{
-    transition:.35s;
-    cursor:pointer;
+.whatsapp-btn{
+background:#25D366;
 }
 
-.product-card:hover,
-.brand-card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 15px 35px rgba(0,0,0,.18);
+.call-btn:hover,
+.whatsapp-btn:hover{
+transform:translateY(-5px);
+box-shadow:0 12px 25px rgba(0,0,0,.3);
 }
 
-.about-text{
+section{
+padding:90px 0;
+}
+
+h2{
+text-align:center;
+font-size:38px;
+margin-bottom:40px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:#fff;
+padding:30px;
+border-radius:15px;
+text-align:center;
+font-size:20px;
+font-weight:600;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.35s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 18px 35px rgba(0,0,0,.15);
+}
+
+#about{
+background:#111;
+color:#fff;
+text-align:center;
+}
+
+#about p{
 max-width:900px;
 margin:auto;
-text-align:center;
 font-size:18px;
+line-height:1.8;
 }
 
 .contact-box{
+background:#fff;
 max-width:700px;
 margin:auto;
-background:#fff;
-padding:30px;
-border-radius:12px;
-box-shadow:0 4px 15px rgba(0,0,0,.1);
+padding:40px;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,.12);
+text-align:center;
 }
 
 .contact-box a{
-color:#0d6efd;
 text-decoration:none;
+color:#111;
+font-weight:600;
 }
 
-<footer>
-    <p>© 2026 SUNDHA TRADERS | All Rights Reserved</p>
-    <p>📍 Hyderabad, Telangana | 📞 9001817266</p>
-</footer>
+footer{
+background:#111;
+color:#fff;
+text-align:center;
+padding:25px;
+}
+
+.floating{
+position:fixed;
+right:20px;
+bottom:20px;
+width:60px;
+height:60px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+text-decoration:none;
+color:#fff;
+box-shadow:0 8px 20px rgba(0,0,0,.3);
+}
 
 @media(max-width:768px){
 
 header .container{
 flex-direction:column;
+padding:15px;
 }
 
 nav{
-margin-top:15px;
+margin-top:12px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
 }
 
 nav a{
-display:inline-block;
-margin:8px;
+margin:0;
+font-size:14px;
 }
-
-.hero h1{
-font-size:36px;
-}
-
-.hero h2{
-font-size:22px;
-}
-
-}
-/* ===== PREMIUM HERO ===== */
-
-.hero{
-    position:relative;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    color:#fff;
-    background:
-    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
-    url("https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=1600&q=80");
-    background-size:cover;
-    background-position:center;
-}
-
-.hero-overlay{
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,.2);
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-    max-width:900px;
-    padding:20px;
-}
-
-.hero h1{
-    font-size:65px;
-    font-weight:800;
-    margin-bottom:15px;
-}
-
-.hero h2{
-    color:#ffb400;
-    font-size:34px;
-    margin-bottom:25px;
-}
-
-.hero p{
-    font-size:20px;
-    line-height:1.8;
-    margin-bottom:35px;
-}
-
-.hero-btn{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-}
-
-.btn-red,
-.btn-green{
-    padding:15px 35px;
-    border-radius:10px;
-    text-decoration:none;
-    color:#fff;
-    font-size:18px;
-    font-weight:700;
-    transition:.3s;
-}
-
-.btn-red{
-    background:#ff3b30;
-}
-
-.btn-green{
-    background:#25D366;
-}
-
-.btn-red:hover,
-.btn-green:hover{
-    transform:translateY(-5px);
-}
-
-@media(max-width:768px){
 
 .hero h1{
 font-size:42px;
@@ -315,162 +237,23 @@ font-size:24px;
 font-size:17px;
 }
 
-}
-/* ABOUT */
-
-.about{
-padding:80px 8%;
-text-align:center;
-background:#111;
-color:white;
-}
-
-.about p{
-max-width:900px;
-margin:auto;
-line-height:1.8;
-font-size:18px;
-color:#ddd;
-}
-
-/* CONTACT */
-
-.contact{
-padding:80px 8%;
-background:#f7f7f7;
-text-align:center;
-}
-
-.contact-box{
-max-width:700px;
-margin:auto;
-background:white;
-padding:40px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,.12);
-}
-
-.contact-box h3{
-margin-bottom:20px;
-font-size:30px;
-color:#ffb400;
-}
-
-.contact-box p{
-margin:15px 0;
-font-size:18px;
-}
-
-.contact-box a{
-text-decoration:none;
-color:#111;
-font-weight:bold;
-}
-
-.contact-box a:hover{
-color:#ffb400;
-}
-.floating-whatsapp{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    width:60px;
-    height:60px;
-    background:#25D366;
-    color:#fff;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:30px;
-    text-decoration:none;
-    box-shadow:0 8px 20px rgba(0,0,0,.3);
-    z-index:9999;
-    transition:.3s;
-}
-
-.floating-whatsapp:hover{
-    transform:scale(1.1);
-}
-/* ================= MOBILE RESPONSIVE ================= */
-
-@media (max-width:768px){
-
-header .container{
-flex-direction:column;
-padding:15px;
-}
-
-nav{
-margin-top:10px;
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:10px;
-}
-
-nav a{
-margin:0;
-font-size:14px;
-}
-
-.hero{
-padding:100px 20px;
-}
-
-.hero h1{
-font-size:42px;
-}
-
-.hero h2{
-font-size:26px;
-}
-
-.hero p{
-font-size:17px;
-line-height:1.7;
-}
-
-.hero-btn{
-display:flex;
+.buttons{
 flex-direction:column;
 align-items:center;
-gap:15px;
 }
 
-.hero-btn a{
+.call-btn,
+.whatsapp-btn{
 width:220px;
 text-align:center;
-font-size:18px;
-padding:15px;
 }
 
-.product-grid,
-.brand-grid{
-grid-template-columns:1fr;
+section{
+padding:70px 20px;
 }
 
-.product-card,
-.brand-card{
-font-size:18px;
-padding:20px;
-}
-
-.contact-box{
-    max-width:700px;
-    margin:auto;
-    border-radius:20px;
-    box-shadow:0 15px 40px rgba(0,0,0,.12);
-    padding:40px;
-}
-
-.about-text{
-font-size:17px;
-line-height:1.8;
-}
-
-.title h2{
-font-size:36px;
+h2{
+font-size:30px;
 }
 
 }
